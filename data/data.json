@@ -2,20 +2,7 @@
   {
     "source": "cards",
     "components": [
-        {
-            "name": "general",
-            "html": "<body><div class='card'> <img class='card-image' src='https://images.unsplash.com/photo-1573136251770-66d8cc9d77db?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8Ym84alFLVGFFMFl8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' /><div class='card-content'><h4 class='card-title'>Card Title</h4><p class='card-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos accusamus delectus deleniti, quibusdam commodi.</p></div></div></body>",            
-            "style": ".card-image{max-height:120px;width:100%;height:100%;object-fit:cover;border-radius:8px}.card-content{padding:1em 0}.card-title{font-weight:700}.card-text{line-height:1.6}",
-            "script": ""
-        }
+      {"name": "general", "html": "<body>\n<div class=\"card\">\n<img class=\"card-image\" src=\"https://images.unsplash.com/photo-1573136251770-66d8cc9d77db?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8Ym84alFLVGFFMFl8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60\"/>\n<div class=\"card-content\">\n<h4 class=\"card-title\">Card Title</h4>\n<p class=\"card-text\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos accusamus delectus deleniti, quibusdam commodi.</p>\n</div>\n</div>\n</body>", "css": "<style type=\"text/css\">\n    .card {\n        box-shadow: 4px 4px 40px 10px rgba(211, 211, 212, 0.15);\n        background-color: #fff;\n        padding: 2em;\n        max-width: 300px;\n        min-height: 300px;\n    }\n\n    .card-image {\n        max-height: 120px;\n        width: 100%;\n        height: 100%;\n        object-fit: cover;        \n        border-radius: 8px;\n    }\n\n    .card-content {\n        padding: 1em 0;\n    }\n\n    .card-title {\n        font-weight: bold;\n    }\n\n    .card-text {\n        line-height: 1.6;\n    }\n  </style>", "js": "<script>\n    console.log('this is general')\n  </script>"}
     ]
-  },
-  {
-    "source": "button",
-    "components": [
-        {
-            "name": "general"
-        }
-    ]
-  }
+  }  
 ]

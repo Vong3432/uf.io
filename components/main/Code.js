@@ -6,6 +6,8 @@ const Code = ({ code, css, html }) => {
     const [currentTab, setCurrentTab] = useState("")
 
     useEffect(() => {
+
+        console.log(css)
         
         if(code)
             setCurrentTab("HTML");

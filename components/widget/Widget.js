@@ -40,8 +40,9 @@ const WidgetPage = ({ source }) => {
             ...prev,
             general: __general,
             template: template,
-            css: componentList[index].style,
-            html: componentList[index].html
+            css: componentList[index].css,
+            html: componentList[index].html,
+            js: componentList[index].js,
         }))
     }
 
