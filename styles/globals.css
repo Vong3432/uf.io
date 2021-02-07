@@ -1,3 +1,8 @@
+:root {
+  --primary: #3072F3;
+  --dark: #121823;
+}
+
 html,
 body {
   padding: 0;
@@ -13,4 +18,66 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: none;
+}
+
+.grid {
+  display: grid;
+  position: relative;
+}
+
+/* Editor */
+.editor-container {
+  background-color: var(--dark);
+  color: #fff;
+
+  padding: 2em 2em 0 2em;
+  border-radius: 0; 
+}
+
+.editor-tabs {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.editor-tabs button {
+  flex: 1;  
+  padding: .5em;
+  background-color: transparent;  
+  border-bottom: 4px solid transparent;
+}
+
+.editor-tabs button.selected {
+  border-color: var(--primary);
+}
+
+.editor-container .prettyprint {
+  background-color: var(--dark);
+  color: #fff;
+  border: none;
+  height: inherit;
+}
+
+@media (min-width: 728px) {
+  .editor-container {
+    /* max-width: inherit; */
+    width: 40%;
+    position: fixed;
+    overflow-x: auto;
+    overflow-y: auto;
+    right: 0;
+    top: 0;
+    min-height: 100vh;
+    height: 100%;       
+  }
+
+  .grid {
+    grid-template-columns: 2fr 1fr;
+  }
 }
