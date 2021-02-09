@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import prettify from 'html-prettify'
 
-const Code = ({ code, css, html }) => {
+const Code = ({ code, css, html, js }) => {
     
     const [currentTab, setCurrentTab] = useState("")
 
@@ -22,7 +22,7 @@ const Code = ({ code, css, html }) => {
             {code && <div className="editor-tabs">
                 {["HTML", "CSS", "JS"].map((tab) => <button onClick={() => setCurrentTab(tab)} className={`${currentTab === tab ? 'selected' : ''}`}>{tab}</button>)}
             </div>}                      
-            {code ? <pre className="prettyprint">{currentTab === "HTML" ? html : currentTab === "CSS" ? css : currentTab === "JS" ? 'js' : ''}</pre> : <h3>Click a component to view source code.</h3> }            
+            {code ? <pre className="prettyprint">{currentTab === "HTML" ? html : currentTab === "CSS" ? css : currentTab === "JS" ? js : ''}</pre> : <h3>Click a component to view source code.</h3> }            
         </div>
     )
 }

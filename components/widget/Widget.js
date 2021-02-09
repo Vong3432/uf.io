@@ -13,6 +13,8 @@ const WidgetPage = ({ source }) => {
         script: null
     })
 
+    const [activeIndex, setActiveIndex] = useState(null)
+
     const [componentList, setComponentList] = useState([])
 
     useEffect(() => {      
@@ -36,6 +38,8 @@ const WidgetPage = ({ source }) => {
         let __general = require(`../../sources/${source}/${componentList[index].name}.js`);
         let template = { __html: __general };
 
+        setActiveIndex(index);
+
         setSelectedComponent((prev) => ({
             ...prev,
             general: __general,
@@ -52,11 +56,16 @@ const WidgetPage = ({ source }) => {
                 <div className="left">
                     {                        
                         componentList.map((item, index) =>                          
-                            <ComponentWidget key={index} onSelectComponent={onSelectComponent} source={source} index={index} item={item} />
+                            <ComponentWidget key={index} activeIndex={activeIndex} onSelectComponent={onSelectComponent} source={source} index={index} item={item} />
                         )
                     }
                 </div>
-                <Code html={selectedComponent.html} css={selectedComponent.css} code={selectedComponent.general} />
+                <Code 
+                    html={selectedComponent.html} 
+                    css={selectedComponent.css} 
+                    js={selectedComponent.js} 
+                    code={selectedComponent.general} 
+                />
             </div>
         </>
     )
@@ -65,12 +74,15 @@ const WidgetPage = ({ source }) => {
 export default WidgetPage
 
 // Render component
-const ComponentWidget = ({ source, item, onSelectComponent, index }) => {
+const ComponentWidget = ({ source, item, onSelectComponent, index, activeIndex }) => {
 
     let __general = require(`../../sources/${source}/${item.name}.js`);
     let template = { __html: __general };
 
     return (
-        <span onClick={() => onSelectComponent(index)} dangerouslySetInnerHTML={template}></span>
+        <div className="component-container">
+            <span onClick={() => onSelectComponent(index)} dangerouslySetInnerHTML={template}></span>
+            <p className={`component-tag ${activeIndex === index && 'active'} `}>{item.name}</p>
+        </div>
     )
 }
